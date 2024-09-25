@@ -16,7 +16,7 @@ const options = {
       title: "Work Project",
       version: "1.0.0",
     },
-    servers: [{ url: "https://test-work-kq8f.onrender.com/" }],
+    servers: [{ url: "http://localhost:10000" }],
   },
   apis: [`${join(__dirname, "routes", "*.js")}`],
 };
