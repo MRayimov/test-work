@@ -4,8 +4,11 @@ import productsRoutes from "./routes/productsRoutes.js";
 import usersRoutes from "./routes/usersRoutes.js";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 const app = express();
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -15,8 +18,10 @@ const options = {
     },
     servers: [{ url: "https://test-work-kq8f.onrender.com/" }],
   },
-  apis: [`./routes/*.js`],
+  apis: [`${join(__dirname, "routes", "*.js")}`],
 };
+console.log(`${join(__dirname, "routes", "*.js")}`);
+
 const swaggerSpec = swaggerJSDoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
