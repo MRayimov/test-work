@@ -15,7 +15,7 @@ const options = {
     },
     servers: [{ url: "https://test-work-kq8f.onrender.com/" }],
   },
-  apis: [`${import.meta.dirname}/routes/*.js`],
+  apis: [`./routes/categoriesRoutes.js`],
 };
 const swaggerSpec = swaggerJSDoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
