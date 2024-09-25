@@ -25,11 +25,11 @@ app.use(express.json());
  * @swagger
  * /:
  *  get:
- *    summary: Welcome to server
- *    description: welcome
- *    responses:
- *      200:
- *        description: hello
+ *      summary: Welcome to server
+ *      description: welcome
+ *      responses:
+ *          200:
+ *              description: hello
  *
  */
 
