@@ -20,23 +20,10 @@ const options = {
   },
   apis: [`${join(__dirname, "routes", "*.js")}`],
 };
-console.log(`${join(__dirname, "routes", "*.js")}`);
 
 const swaggerSpec = swaggerJSDoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
-
-/**
- * @swagger
- * /:
- *  get:
- *      summary: Welcome to server
- *      description: welcome
- *      responses:
- *          200:
- *              description: hello
- *
- */
 
 app.get("/", (req, res) => {
   res.send("Welcome to server!");
